@@ -1,0 +1,20 @@
+{
+  "name": "gar2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^6.18.0",
+    "cheerio": "^1.1.2",
+    "dotenv": "^17.2.3",
+    "node-fetch": "^3.3.2",
+    "ofetch": "^1.4.1",
+    "prisma": "^6.18.0"
+  }
+}

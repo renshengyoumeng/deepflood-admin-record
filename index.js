@@ -84,7 +84,7 @@ async function main() {
   let count = 0
   let i = 1
   while (!isMax) {
-    const maxId = await getMaxId()
+    const maxId = await getMaxId() ?? 0
     const adminRecordList = await getAdminRecordList(i)
 
     if (!adminRecordList) {
@@ -93,10 +93,10 @@ async function main() {
 
     for (let record of adminRecordList) {
       if (record.id <= maxId) {
-        const count = await getTotalCount()
+        const totalCount = await getTotalCount()
         console.log('已经是最新数据了,最新的id是' + record.id)
-        console.log('当前表中存在' + count + '条数据')
-        console.log(count == record.id ? '数据正常' : '存在缺失数据')
+        console.log('当前表中存在' + totalCount + '条数据')
+        console.log(totalCount == record.id ? '数据正常' : '存在缺失数据')
         isMax = true
         return
       }

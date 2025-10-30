@@ -87,8 +87,10 @@ async function main() {
     const maxId = await getMaxId() ?? 0
     const adminRecordList = await getAdminRecordList(i)
 
-    if (!adminRecordList) {
-      console.error('获取数据异常，请检查')
+
+    if (!adminRecordList || adminRecordList.length === 0) {
+      console.log("没有更多数据，停止。可能数据获取异常")
+      break
     }
 
     for (let record of adminRecordList) {
